@@ -1,0 +1,42 @@
+﻿@model EMS.NIEM.Sensor.XYZLocationSensorDetails
+
+@*This is the main view for displaying sensor location info*@
+
+<table style="color:black; border-collapse: collapse; border: 1px solid black; width: 25%;">
+  <tr>
+    <th style="text-align: left" colspan="2">
+      XYZ Location Details
+    </th>
+  </tr>
+
+  @{
+    Fresh.API.Areas.DE_HTML.Models.NameValue_ViewModel nameValue = new Fresh.API.Areas.DE_HTML.Models.NameValue_ViewModel();
+  }
+
+
+  @if (Model.ShouldSerializeXAxisAcceleration())
+  {
+    nameValue.Name = "X Axis:";
+    nameValue.Value = Model.XAxisAcceleration.ToString("####0.0") + " g";
+
+    @Html.Partial("SensorDetails_TableRow50", nameValue);
+  }
+
+
+  @if (Model.ShouldSerializeYAxisAcceleration())
+  {
+    nameValue.Name = "Y Axis:";
+    nameValue.Value = Model.YAxisAcceleration.ToString("####0.0") + " g";
+
+    @Html.Partial("SensorDetails_TableRow50", nameValue);
+  }
+
+
+  @if (Model.ShouldSerializeZAxisAcceleration())
+  {
+    nameValue.Name = "Z Axis:";
+    nameValue.Value = Model.ZAxisAcceleration.ToString("####0.0") + " g";
+
+    @Html.Partial("SensorDetails_TableRow50", nameValue);
+  }
+</table>

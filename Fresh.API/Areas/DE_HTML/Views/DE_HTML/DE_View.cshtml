@@ -1,0 +1,29 @@
+﻿@{ 
+  Layout = "~/Areas/DE_HTML/Views/Shared/_LayoutDeDetails.cshtml";
+}
+
+
+@{ 
+  ViewBag.Title = "DE Details";
+}
+  
+@*Html content will be loaded here as a partial view*@
+<div id="partial_views">
+</div>
+
+  <script type="text/javascript">
+    var id = @ViewBag.DeHash
+
+    // Call the data refresh initially
+    $(document).ready(dataRefresh(id));
+
+    function dataRefresh(id) {
+      // Load data
+      $("#partial_views").load('DEDetails/' + id);
+
+      // Now set a timer to do it again in 5 seconds
+      setTimeout(function(){
+        dataRefresh(id);
+      }, 5000);
+    };
+  </script>

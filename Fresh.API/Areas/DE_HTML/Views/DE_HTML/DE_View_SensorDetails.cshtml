@@ -1,0 +1,69 @@
+﻿@model EMS.NIEM.Sensor.SensorDetail
+
+@*This is the main view used to display sensor data for one sensor, which could
+  have multiple groups of data (Power, Environment, Physiological, etc.)*@
+
+@{
+  string sColor = "";
+  string sBlackColor = "color:black;";
+
+  if (Model.Status == EMS.NIEM.Sensor.SensorStatusCodeList.Normal)
+  {
+    sColor = "color:green;";
+  }
+  else if (Model.Status == EMS.NIEM.Sensor.SensorStatusCodeList.LowPower)
+  {
+    sColor = "color:orange;";
+  }
+  else if (Model.Status == EMS.NIEM.Sensor.SensorStatusCodeList.Error)
+  {
+    sColor = "color:red;";
+  }
+  else if (Model.Status == EMS.NIEM.Sensor.SensorStatusCodeList.Sleeping)
+  {
+    sColor = "color:gray;";
+  }
+
+    <div style="border:3px;border-style:solid; padding: 1em;border-color:black;">
+      <p style="@sBlackColor"><strong>Sensor ID:</strong> @Model.ID</p>
+        <p style="@sBlackColor">
+          <strong>Primary Status: </strong><span style="font-weight:bold;@sColor">@Model.Status.ToString()</span>
+
+
+          @if (Model.DeviceDetails != null)
+          {
+            <br />
+            @Html.Partial("SensorDetails_DeviceInfo", Model.DeviceDetails);
+          }
+
+
+          @if (Model.PowerDetails != null)
+          {
+            <br />
+            @Html.Partial("SensorDetails_PowerInfo", Model.PowerDetails);
+          }
+
+
+          @if (Model.PhysiologicalDetails != null)
+          {
+            <br />
+            @Html.Partial("SensorDetails_Physiological", Model.PhysiologicalDetails);
+          }
+
+
+          @if (Model.EnvironmentalDetails != null)
+          {
+            <br />
+            @Html.Partial("SensorDetails_Environmental", Model.EnvironmentalDetails);
+          }
+
+
+          @if (Model.LocationDetails != null)
+          {
+            <br />
+            @Html.Partial("SensorDetails_Location", Model.LocationDetails);
+          }
+        </p>
+    </div>
+    <br />
+  }

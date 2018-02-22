@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{338EF85D-4BAA-4880-A750-13021AD9BBBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fresh.Global</RootNamespace>
+    <AssemblyName>Fresh.Global</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EMS.EDXL.CIQ, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.CIQ.1.0.120\lib\net45\EMS.EDXL.CIQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.CT, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.CT.1.0.120\lib\net45\EMS.EDXL.CT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.DE, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.DE.1.0.120\lib\net45\EMS.EDXL.DE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.EXT, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.EXT.1.0.120\lib\net45\EMS.EDXL.EXT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.GSF, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.GSF.1.0.120\lib\net45\EMS.EDXL.GSF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.Shared, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.Shared.1.0.120\lib\net45\EMS.EDXL.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.SitRep, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.SitRep.1.0.120\lib\net45\EMS.EDXL.SitRep.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.Utilities, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.Utilities.1.0.120\lib\net45\EMS.EDXL.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.EMLC, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.EMLC.1.0.120\lib\net45\EMS.NIEM.EMLC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Incident, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Incident.1.0.120\lib\net45\EMS.NIEM.Incident.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Infrastructure, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Infrastructure.1.0.120\lib\net45\EMS.NIEM.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.MutualAid, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.MutualAid.1.0.120\lib\net45\EMS.NIEM.MutualAid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.NIEMCommon, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.NIEMCommon.1.0.120\lib\net45\EMS.NIEM.NIEMCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Resource, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Resource.1.0.120\lib\net45\EMS.NIEM.Resource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Sensor, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Sensor.1.0.120\lib\net45\EMS.NIEM.Sensor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AWSConfiguration.cs" />
+    <Compile Include="ContentHelpers\CAPContent.cs" />
+    <Compile Include="ContentHelpers\CoTContent.cs" />
+    <Compile Include="ContentHelpers\STContent.cs" />
+    <Compile Include="ContentHelpers\EMLCContent.cs" />
+    <Compile Include="ContentHelpers\HAVEContent.cs" />
+    <Compile Include="ContentHelpers\RMContent.cs" />
+    <Compile Include="ContentHelpers\SitRepContent.cs" />
+    <Compile Include="ContentHelpers\TEPContent.cs" />
+    <Compile Include="DEUtilities.cs" />
+    <Compile Include="Exceptions\FederationException.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleGeoLocation.cs" />
+    <Compile Include="IconConfig.cs" />
+    <Compile Include="IconHelpers\FreshIcons.cs" />
+    <Compile Include="IconHelpers\IconGroup.cs" />
+    <Compile Include="IconHelpers\IconSet.cs" />
+    <Compile Include="IDatabaseDAL.cs" />
+    <Compile Include="ContentHelpers\IFeedContent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\basicTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\census_uscounty.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\core_misc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\dataQuality.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\emcl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\emlc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\em_base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\fema_rtlt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\fema_rtlt1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\fips_10-4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\fips_5-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\geometry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\geospatial.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\maid.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\milops-future.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\mo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\niem-core.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\ols.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\referenceSystems.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\spatialReferencing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\structures.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\temporalObjects.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\unece_rec20-misc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\xlinks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\xs.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EventTypeCodeList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\adapters\fema\3.0\" />
+    <Folder Include="Resources\extension\" />
+    <Folder Include="Resources\niem\codes\census_uscounty\3.0\" />
+    <Folder Include="Resources\niem\codes\core_misc\3.0\" />
+    <Folder Include="Resources\niem\codes\fips_10-4\3.0\" />
+    <Folder Include="Resources\niem\codes\fips_5-2\3.0\" />
+    <Folder Include="Resources\niem\niem-core\3.0\" />
+    <Folder Include="Resources\niem\proxy\xsd\3.0\" />
+    <Folder Include="Resources\niem\structures\3.0\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

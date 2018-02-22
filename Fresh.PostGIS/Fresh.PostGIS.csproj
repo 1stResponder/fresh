@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86765DF8-4C99-412E-96F1-A246ED6869EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fresh.PostGIS</RootNamespace>
+    <AssemblyName>Fresh.PostGIS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EMS.EDXL.CIQ, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.CIQ.1.0.120\lib\net45\EMS.EDXL.CIQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.CT, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.CT.1.0.120\lib\net45\EMS.EDXL.CT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.DE, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.DE.1.0.120\lib\net45\EMS.EDXL.DE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.EXT, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.EXT.1.0.120\lib\net45\EMS.EDXL.EXT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.GSF, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.GSF.1.0.120\lib\net45\EMS.EDXL.GSF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.Shared, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.Shared.1.0.120\lib\net45\EMS.EDXL.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.SitRep, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.SitRep.1.0.120\lib\net45\EMS.EDXL.SitRep.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.EDXL.Utilities, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.EDXL.Utilities.1.0.120\lib\net45\EMS.EDXL.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.EMLC, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.EMLC.1.0.120\lib\net45\EMS.NIEM.EMLC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Incident, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Incident.1.0.120\lib\net45\EMS.NIEM.Incident.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Infrastructure, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Infrastructure.1.0.120\lib\net45\EMS.NIEM.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.MutualAid, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.MutualAid.1.0.120\lib\net45\EMS.NIEM.MutualAid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.NIEMCommon, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.NIEMCommon.1.0.120\lib\net45\EMS.NIEM.NIEMCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Resource, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Resource.1.0.120\lib\net45\EMS.NIEM.Resource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EMS.NIEM.Sensor, Version=1.0.120.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMS.NIEM.Sensor.1.0.120\lib\net45\EMS.NIEM.Sensor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.2.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.2\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseConstants.cs" />
+    <Compile Include="DeDTO.cs" />
+    <Compile Include="FeedDTO.cs" />
+    <Compile Include="PostGISDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleDTO.cs" />
+    <Compile Include="RuleFedDTO.cs" />
+    <Compile Include="RuleSourceValueDTO.cs" />
+    <Compile Include="SourceValueDTO.cs" />
+    <Compile Include="SourceValueListDTO.cs" />
+    <Compile Include="ArchiveDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fresh.Federation\Fresh.Federation.csproj">
+      <Project>{a0526796-981c-4bcb-9918-5c4bfb47985e}</Project>
+      <Name>Fresh.Federation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fresh.Global\Fresh.Global.csproj">
+      <Project>{338ef85d-4baa-4880-a750-13021ad9bbbf}</Project>
+      <Name>Fresh.Global</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,70 @@
+﻿@model Fresh.API.Areas.DE_HTML.Models.DE_Details_ViewModel
+
+@{
+  Layout = null;
+}
+
+@*This is the main parent view for all the details associated with a DE.
+Most of the HTML rendering is handled in sub-views.*@
+<!DOCTYPE html>
+
+<div style="background-color:black;color:white;padding:5px;">
+  <table style="color:white;">
+    <tr>
+      <td style="padding:15px">
+        <img src="@Model.EventHelper.IconURL()" alt="@Model.EventHelper.FriendlyName()" />
+      </td>
+      <td>
+        <h1>@Model.EventHelper.Title()</h1>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        @Model.EventHelper.FriendlyName()
+      </td>
+    </tr>
+    <tr>
+      <td id="lastUpdate" colspan="2">
+        Last Update:  
+      </td>
+    </tr>
+  </table>
+</div>
+
+@{
+  var sColor = "";
+ }
+
+@*Render Resource Details as partial view*@
+@if (Model.EventHelper.ResourceDetails != null)
+{
+  <br />
+  @Html.Partial("DE_View_ResourceDetails", Model);
+}
+
+@*Render Incident Details as partial view*@
+@if (Model.EventHelper.IncidentDetails != null)
+{
+  <br />
+  @Html.Partial("DE_View_IncidentDetails", Model);
+}
+
+@*Render Sensor Details as partial view*@
+@if (Model.EventHelper.SensorDetails != null)
+{
+  <br />
+
+  foreach (var sensorDetail in Model.EventHelper.SensorDetails)
+  {
+    @Html.Partial("DE_View_SensorDetails", sensorDetail);
+  }
+}
+
+@*This script uses the DateTimeSent of the DE, which is in UTC, and converts it to the browser's local time,
+then updates the HTML element appropriately.*@
+<script type="text/javascript">
+  var localTime = new Date('@Model.DateTimeSent.ToString()' + ' UTC');
+  var localString = localTime.toLocaleString();
+
+  document.getElementById('lastUpdate').innerHTML += localString;
+</script>  

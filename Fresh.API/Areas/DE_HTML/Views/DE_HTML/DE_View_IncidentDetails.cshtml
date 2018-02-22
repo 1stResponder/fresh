@@ -1,0 +1,57 @@
+﻿
+@model Fresh.API.Areas.DE_HTML.Models.DE_Details_ViewModel
+
+@*This is the main view for Incident Details*@
+
+@{
+  string sColor;
+
+  foreach (var id in Model.EventHelper.IncidentDetails)
+  {
+    string sLatLong = $"{Model.EventHelper.Location().Latitude.ToString()}, {Model.EventHelper.Location().Longitude.ToString()}";
+
+    <p>
+      <strong>Latitude/Longitude: </strong>@sLatLong
+    </p>
+
+    string addr = Model.Address;
+
+    if (id.Status.PrimaryStatus == EMS.NIEM.Incident.IncidentPrimaryStatusCodeList.Active)
+    {
+      sColor = "color:green";
+    }
+    else if (id.Status.PrimaryStatus == EMS.NIEM.Incident.IncidentPrimaryStatusCodeList.Pending)
+    {
+      sColor = "color:orange";
+    }
+    else
+    {
+      sColor = "color:black";
+    }
+
+    if (id.LocationExtension != null && id.LocationExtension.Address != null)
+    {
+      addr = id.LocationExtension.Address.ToString();
+    }
+    else
+    {
+      if (string.IsNullOrWhiteSpace(addr))
+      {
+        addr = "Not Found";
+      }
+    }
+
+    <text>
+      <p>
+        <strong>Address: </strong>@addr
+      </p>
+
+      <p style="font-weight:bold;">
+        PrimaryStatus:
+        <span style="@sColor">
+          @id.Status.PrimaryStatus.ToString()
+        </span>
+      </p>
+    </text>
+  }
+}

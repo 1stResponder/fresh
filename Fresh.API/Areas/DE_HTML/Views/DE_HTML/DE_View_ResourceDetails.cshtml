@@ -1,0 +1,68 @@
+﻿@model Fresh.API.Areas.DE_HTML.Models.DE_Details_ViewModel
+
+@*This is the main view for Resource Details*@
+
+@{ 
+
+  string sColor;
+
+  foreach (var rd in Model.EventHelper.ResourceDetails)
+  {
+    switch (rd.Status.PrimaryStatus)
+    {
+      case EMS.NIEM.Resource.ResourcePrimaryStatusCodeList.Available:
+        sColor = "color:green";
+        break;
+      case EMS.NIEM.Resource.ResourcePrimaryStatusCodeList.ConditionallyAvailable:
+        sColor = "color:yellow";
+        break;
+      case EMS.NIEM.Resource.ResourcePrimaryStatusCodeList.NotAvailable:
+        sColor = "color:red";
+        break;
+      default:
+        sColor = "color:black";
+        break;
+    }
+
+    string sLatLong = $"{Model.EventHelper.Location().Latitude.ToString()}, {Model.EventHelper.Location().Longitude.ToString()}";
+
+    <p>
+      <strong>Latitude/Longitude:</strong> @sLatLong
+    </p>
+
+    string addr = Model.Address;
+
+    if (String.IsNullOrWhiteSpace(addr))
+    {
+      addr = "Not Found";
+    }
+
+    <text>
+      <p>
+        <strong>Address:</strong> @addr
+      </p>
+
+      <p style="font-weight:bold;">
+         Primary Status:
+        <span style="@sColor">
+          @rd.Status.PrimaryStatus.ToString()
+        </span>
+      </p>
+      
+        @if (rd.Status.SecondaryStatus != null
+          && rd.Status.SecondaryStatus.Count > 0)
+        {
+          <p style="font-weight:bold;">
+            Secondary Status:
+              @foreach (var secondaryStatus in rd.Status.SecondaryStatus)
+              {
+              <p style="margin-left: 20px; ">
+                @secondaryStatus.GetSecondaryStatusText()
+              </p>
+              }
+          </p>
+        }
+      
+    </text>
+          }
+        }

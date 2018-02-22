@@ -1,0 +1,26 @@
+﻿@model EMS.NIEM.Sensor.PowerDetails
+
+@*This is the main view for displaying sensor power info*@
+
+<table style="color:black; border-collapse: collapse; border: 1px solid black; width: 25%;">
+  <tr>
+    <th style="text-align: left" colspan="2">
+      Power Details
+    </th>
+  </tr>
+
+  @{
+    Fresh.API.Areas.DE_HTML.Models.NameValue_ViewModel nameValue = new Fresh.API.Areas.DE_HTML.Models.NameValue_ViewModel();
+  }
+
+
+  @if (Model.ShouldSerializeBatteryLevel())
+  {
+    nameValue.Name = "Battery Level:";
+    float temp = (float)Model.BatteryLevel / 10;
+
+    nameValue.Value = temp.ToString("####0.0") + " %";
+
+    @Html.Partial("SensorDetails_TableRow50", nameValue);
+  }
+</table>
